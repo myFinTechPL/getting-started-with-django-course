@@ -9,7 +9,7 @@ from catalog.models import Book, Author
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
 #    pass
-#    list_display = ('id', 'last_name', 'first_name', 'show_books')
+    list_display = ('id', 'last_name', 'first_name', 'show_books')
 
     def show_books(self, obj):
         count = Book.objects.filter(author=obj).count()

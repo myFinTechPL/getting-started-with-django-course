@@ -8,8 +8,8 @@ class Author(models.Model):
     birth_year = models.IntegerField()
 
 ### Uncommented in chapter 5 {
-#    def __str__(self):
-#        return f"Author(id={self.id}, last_name={self.last_name})"
+    def __str__(self):
+        return f"{self.id} - {self.last_name}"
 ### }
 
 class Book(models.Model):
@@ -20,13 +20,13 @@ class Book(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
 ### Uncommented in chapter 5 {
-#    class Meta:
-#        ordering = ['author__last_name', 'title']
-#        verbose_name = 'Bookington'
-#        verbose_name_plural = 'Bookington McBookFace'
-#        indexes = [
-#            models.Index(fields=['title', 'author']),
-#        ]
+    class Meta:
+        ordering = ['author__last_name', 'title']
+        verbose_name = 'Bookington'
+        verbose_name_plural = 'Bookington McBookFace'
+        indexes = [
+            models.Index(fields=['title', 'author']),
+        ]
 ### }
 
     def __str__(self):

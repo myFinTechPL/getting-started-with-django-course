@@ -15,6 +15,6 @@ class Book(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
 ### Uncommented in chapter 4 {
-#    def __str__(self):
-#        return f"Book(id={self.id}, title={self.title}, author_id={self.author.id})"
+    def __str__(self):
+       return f"Book(id={self.id}, title={self.title}, author_id={self.author.id})"
 ### }

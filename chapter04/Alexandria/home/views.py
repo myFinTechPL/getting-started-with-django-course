@@ -24,6 +24,27 @@ def sample(request):
 
     return render(request, "sample.html", data)
 
+def sample_my(request):
+    data = {
+        'books':[
+            {
+                'title':"Matrix",
+                'author':"Shelley, Mary",
+            },
+            {
+                'title':"Matric Resurections",
+                'author':"Kafka, Franz",
+                'recommended':True,
+            },
+            {
+                'title':"catrix",
+                'author':"Stoker, Bram",
+                'recommended':False,
+            },
+        ]
+    }
+
+    return render(request, "sample.html", data)
 
 def about(request):
     return render(request, "about.html")
